@@ -1,0 +1,49 @@
+name: Build Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: easycontrolfork
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v3
+      - name: Prepare signing
+        working-directory: .
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            {
+              echo "MY_KEYSTORE_FILE=$RUNNER_TEMP/release.jks"
+              echo "MY_KEYSTORE_PASSWORD=$KEYSTORE_PASSWORD"
+              echo "MY_KEY_ALIAS=$KEY_ALIAS"
+              echo "MY_KEY_PASSWORD=$KEY_PASSWORD"
+            } > keystore.properties
+          fi
+      - run: chmod +x gradlew && ./gradlew assembleRelease --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-apk
+          path: easycontrolfork/app/build/outputs/apk/release/*.apk
+      - uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: easycontrolfork/app/build/outputs/apk/release/*.apk
