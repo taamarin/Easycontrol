@@ -5,6 +5,7 @@ plugins {
 def keystorePropertiesFile = rootProject.file('../keystore.properties')
 def keystoreProperties = new Properties()
 if (keystorePropertiesFile.exists()) keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+def hasReleaseSigning = keystorePropertiesFile.exists() && keystoreProperties['MY_KEYSTORE_FILE'] && file(keystoreProperties['MY_KEYSTORE_FILE']).exists()
 
 android {
   namespace 'com.daitj.easycontrolfork.app'
@@ -27,7 +28,7 @@ android {
   
   signingConfigs {
       release {
-          if (keystorePropertiesFile.exists()) {
+          if (hasReleaseSigning) {
             storeFile file(keystoreProperties['MY_KEYSTORE_FILE'])
             storePassword keystoreProperties['MY_KEYSTORE_PASSWORD']
             keyAlias keystoreProperties['MY_KEY_ALIAS']
@@ -49,7 +50,7 @@ android {
       minifyEnabled true
       shrinkResources true
       proguardFiles 'proguard-rules.pro'
-      signingConfig signingConfigs.release
+      if (hasReleaseSigning) signingConfig signingConfigs.release
     }
   }
 
