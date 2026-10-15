@@ -47,7 +47,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
     android:text="辅助说明"
-    android:textColor="?attr/colorOnSurfaceSecond"
+    android:textColor="?attr/colorOnSurfaceVariant"
     android:textSize="@dimen/smallSmallFont"
     tools:ignore="HardcodedText" />
 
