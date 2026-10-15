@@ -75,3 +75,6 @@ dependencies {
   implementation 'androidx.documentfile:documentfile:1.0.1'
   implementation 'com.google.android.material:material:1.11.0'
 }
+
+tasks.matching { it.name == 'preReleaseBuild' }.configureEach { dependsOn ':server:copyRelease' }
+tasks.matching { it.name == 'preDebugBuild' }.configureEach { dependsOn ':server:copyDebug' }
