@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.util.Pair;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
@@ -56,12 +57,14 @@ public class ViewTools {
 
   // 设置状态栏导航栏颜色
   public static void setStatusAndNavBar(Activity context) {
+    TypedValue surfaceColor = new TypedValue();
+    context.getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurface, surfaceColor, true);
     // 导航栏
-    context.getWindow().setNavigationBarColor(context.getResources().getColor(R.color.background));
+    context.getWindow().setNavigationBarColor(surfaceColor.data);
     // 状态栏
     context.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     context.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-    context.getWindow().setStatusBarColor(context.getResources().getColor(R.color.background));
+    context.getWindow().setStatusBarColor(surfaceColor.data);
     if ((context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) != Configuration.UI_MODE_NIGHT_YES)
       context.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     // 设置异形屏

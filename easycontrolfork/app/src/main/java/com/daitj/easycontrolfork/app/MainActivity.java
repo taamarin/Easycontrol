@@ -56,6 +56,15 @@ public class MainActivity extends Activity {
   }
 
   @Override
+  protected void onResume() {
+    super.onResume();
+    if (activityMainBinding != null) {
+      activityMainBinding.devicesList.setNumColumns(AppData.setting.getHomeGrid() ? 3 : 1);
+      deviceListAdapter.notifyDataSetChanged();
+    }
+  }
+
+  @Override
   protected void onDestroy() {
     myBroadcastReceiver.unRegister(this);
     super.onDestroy();

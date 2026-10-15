@@ -3,7 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:background="@color/cardBackground"
+  android:background="?attr/colorSurfaceContainerLow"
   android:gravity="center_vertical"
   android:orientation="vertical"
   android:paddingTop="6dp"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="设置项"
-        android:textColor="@color/onCardBackground"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="@dimen/smallFont"
         tools:ignore="HardcodedText" />
     </FrameLayout>
@@ -34,9 +34,9 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="10dp"
-      android:thumbTint="@color/button"
+      android:thumbTint="?attr/colorPrimary"
       android:thumbTintMode="multiply"
-      android:trackTint="@color/button"
+      android:trackTint="?attr/colorPrimary"
       android:trackTintMode="multiply"
       tools:ignore="UseSwitchCompatOrMaterialXml" />
   </LinearLayout>
@@ -47,7 +47,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
     android:text="辅助说明"
-    android:textColor="@color/onCardBackgroundSecond"
+    android:textColor="?attr/colorOnSurfaceSecond"
     android:textSize="@dimen/smallSmallFont"
     tools:ignore="HardcodedText" />
 

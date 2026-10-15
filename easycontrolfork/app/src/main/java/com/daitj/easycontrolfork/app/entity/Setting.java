@@ -27,6 +27,15 @@ public final class Setting {
     editor.apply();
   }
 
+  public boolean getHomeGrid() {
+    return sharedPreferences.getBoolean("homeGrid", false);
+  }
+
+  public void setHomeGrid(boolean value) {
+    editor.putBoolean("homeGrid", value);
+    editor.apply();
+  }
+
   public String getLocalUUID() {
     if (!sharedPreferences.contains("UUID")) {
       editor.putString("UUID", UUID.randomUUID().toString());

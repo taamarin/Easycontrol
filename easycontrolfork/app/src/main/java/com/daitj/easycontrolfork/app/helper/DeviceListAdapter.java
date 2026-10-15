@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.util.Pair;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Random;
 
 import com.daitj.easycontrolfork.app.DeviceDetailActivity;
 import com.daitj.easycontrolfork.app.R;
@@ -30,12 +30,6 @@ public class DeviceListAdapter extends BaseAdapter {
 
   private final Context context;
   private Device sendFileDevice;
-  private static final int[] colors = {R.color.color1, R.color.color2, R.color.color3, R.color.color4, R.color.color5, R.color.color6, R.color.color7, R.color.color8, R.color.color9};
-  private static final int[] onColors = {R.color.onColor1, R.color.onColor2, R.color.onColor3, R.color.onColor4, R.color.onColor5, R.color.onColor6, R.color.onColor7, R.color.onColor8, R.color.onColor9};
-
-  // 生成随机数
-  private final Random random = new Random();
-
   public DeviceListAdapter(Context c) {
     queryDevices();
     context = c;
@@ -67,9 +61,31 @@ public class DeviceListAdapter extends BaseAdapter {
     Device device = AdbTools.devicesList.get(i);
     ItemDevicesItemBinding devicesItemBinding = (ItemDevicesItemBinding) view.getTag();
     // 设置卡片值
-    int colorInt = random.nextInt(8);
-    devicesItemBinding.deviceIconBackground.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(colors[colorInt])));
-    devicesItemBinding.deviceIcon.setImageTintList(ColorStateList.valueOf(context.getResources().getColor(onColors[colorInt])));
+    boolean grid = AppData.setting.getHomeGrid();
+    int containerColor = resolveThemeColor(com.google.android.material.R.attr.colorPrimaryContainer);
+    int onContainerColor = resolveThemeColor(com.google.android.material.R.attr.colorOnPrimaryContainer);
+    devicesItemBinding.deviceIconBackground.setBackgroundTintList(ColorStateList.valueOf(containerColor));
+    devicesItemBinding.deviceIcon.setImageTintList(ColorStateList.valueOf(onContainerColor));
+    devicesItemBinding.getRoot().setOrientation(grid ? android.widget.LinearLayout.VERTICAL : android.widget.LinearLayout.HORIZONTAL);
+    android.widget.LinearLayout textLayout = (android.widget.LinearLayout) devicesItemBinding.deviceType.getParent();
+    android.widget.LinearLayout.LayoutParams textLayoutParams = (android.widget.LinearLayout.LayoutParams) textLayout.getLayoutParams();
+    if (grid) {
+      devicesItemBinding.getRoot().setGravity(android.view.Gravity.CENTER);
+      textLayoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+      textLayoutParams.weight = 0;
+      devicesItemBinding.deviceType.setGravity(android.view.Gravity.CENTER);
+      devicesItemBinding.deviceName.setGravity(android.view.Gravity.CENTER);
+      textLayout.setPadding(0, textLayout.getPaddingTop(), 0, textLayout.getPaddingBottom());
+    } else {
+      devicesItemBinding.getRoot().setGravity(android.view.Gravity.CENTER_VERTICAL);
+      textLayoutParams.width = 0;
+      textLayoutParams.weight = 1;
+      int textPadding = Math.round(12 * context.getResources().getDisplayMetrics().density);
+      textLayout.setPadding(textPadding, textLayout.getPaddingTop(), 0, textLayout.getPaddingBottom());
+      devicesItemBinding.deviceType.setGravity(android.view.Gravity.START);
+      devicesItemBinding.deviceName.setGravity(android.view.Gravity.START);
+    }
+    textLayout.setLayoutParams(textLayoutParams);
     devicesItemBinding.deviceIcon.setImageResource(device.isNetworkDevice() ? R.drawable.wifi : R.drawable.link);
     devicesItemBinding.deviceType.setText(context.getString(device.isNetworkDevice() ? R.string.main_device_type_network : R.string.main_device_type_link));
     devicesItemBinding.deviceName.setText(device.name);
@@ -81,6 +97,12 @@ public class DeviceListAdapter extends BaseAdapter {
       return true;
     });
     return view;
+  }
+
+  private int resolveThemeColor(int attribute) {
+    TypedValue value = new TypedValue();
+    context.getTheme().resolveAttribute(attribute, value, true);
+    return value.data;
   }
 
   // 卡片长按事件
