@@ -7,6 +7,12 @@
   <color name="cardBackground">#FFFFFF</color>
   <color name="onCardBackground">#000000</color>
   <color name="onCardBackgroundSecond">#696969</color>
+  <color name="homeHeader">#E8EAF8</color>
+  <color name="onHomeHeader">#252B52</color>
+  <color name="onHomeHeaderVariant">#565D83</color>
+  <color name="homeHeaderAccent">#D6DAF1</color>
+  <color name="homeFab">#4A5FC1</color>
+  <color name="onHomeFab">#FFFFFF</color>
 
   <!-- 特殊色彩 -->
   <color name="button">#2E2E2E</color>

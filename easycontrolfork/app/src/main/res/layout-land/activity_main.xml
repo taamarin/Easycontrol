@@ -9,26 +9,16 @@
   <FrameLayout
     android:layout_width="0dp"
     android:layout_height="match_parent"
-    android:layout_weight="4">
-
-    <ImageView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_gravity="center"
-      android:alpha="0.5"
-      android:padding="15dp"
-      android:scaleType="fitEnd"
-      android:src="@drawable/main_background" />
+    android:layout_weight="4"
+    android:layout_margin="8dp"
+    android:background="@drawable/home_header">
 
     <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:gravity="center_vertical"
       android:orientation="horizontal"
-      android:paddingStart="20dp"
-      android:paddingTop="10dp"
-      android:paddingEnd="5dp"
-      android:paddingBottom="10dp">
+      android:padding="12dp">
 
       <LinearLayout
         android:layout_width="0dp"
@@ -40,8 +30,8 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="@string/app_name_simple"
-          android:textColor="@color/onBackground"
-          android:textSize="@dimen/largeFont"
+          android:textColor="@color/onHomeHeader"
+          android:textSize="22sp"
           android:textStyle="bold" />
 
         <TextView
@@ -49,32 +39,34 @@
           android:layout_height="wrap_content"
           android:maxLines="1"
           android:text="@string/main_poem"
-          android:textColor="@color/onBackgroundSecond"
-          android:textSize="@dimen/smallSmallFont" />
+          android:textColor="@color/onHomeHeaderVariant"
+          android:textSize="12sp" />
       </LinearLayout>
 
       <ImageView
         android:id="@+id/button_set"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:padding="10dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/background_round"
+        android:backgroundTint="@color/homeHeaderAccent"
+        android:padding="14dp"
         android:src="@drawable/bars"
-        android:tint="@color/onBackground" />
+        android:tint="@color/onHomeHeader" />
 
     </LinearLayout>
 
     <ImageView
       android:id="@+id/button_add"
-      android:layout_width="60dp"
-      android:layout_height="60dp"
+      android:layout_width="56dp"
+      android:layout_height="56dp"
       android:layout_gravity="center_horizontal|bottom"
-      android:layout_marginBottom="40dp"
+      android:layout_marginBottom="16dp"
       android:background="@drawable/background_round"
-      android:backgroundTint="@color/button"
+      android:backgroundTint="@color/homeFab"
       android:elevation="8dp"
-      android:padding="18dp"
+      android:padding="16dp"
       android:src="@drawable/plus"
-      android:tint="@color/onButton" />
+      android:tint="@color/onHomeFab" />
   </FrameLayout>
 
   <FrameLayout
@@ -87,7 +79,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:divider="#00000000"
-      android:dividerHeight="14dp"
+      android:dividerHeight="8dp"
       android:padding="10dp"
       tools:listitem="@layout/item_devices_item" />
   </FrameLayout>
