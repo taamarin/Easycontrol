@@ -141,9 +141,10 @@ public class ViewTools {
     spinnerView.itemSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
       @Override
       public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        Object selectedItem = parent.getItemAtPosition(position);
-        if (function != null && selectedItem != null)
-          function.run(selectedItem.toString());
+        if (function != null && position >= 0 && position < parent.getCount()) {
+          Object selectedItem = parent.getItemAtPosition(position);
+          if (selectedItem != null) function.run(selectedItem.toString());
+        }
       }
 
       @Override
