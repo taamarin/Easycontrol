@@ -3,7 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="@color/background"
+  android:background="?attr/colorSurface"
   android:orientation="vertical"
   tools:context=".DeviceDetailActivity">
 
@@ -13,7 +13,7 @@
     android:layout_height="54dp"
     android:padding="15dp"
     android:src="@drawable/chevron_left"
-    android:tint="@color/onBackground" />
+    android:tint="?attr/colorOnSurface" />
 
   <ScrollView
     android:layout_width="match_parent"
@@ -37,7 +37,7 @@
         android:paddingEnd="15dp"
         android:paddingBottom="10dp"
         android:text="@string/device_uuid"
-        android:textColor="@color/onCardBackground"
+        android:textColor="?attr/colorOnSurface"
         android:textSize="@dimen/middleFont" />
 
       <LinearLayout
@@ -55,7 +55,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="@string/device_name"
-          android:textColor="@color/onCardBackground"
+          android:textColor="?attr/colorOnSurface"
           android:textSize="@dimen/middleFont" />
 
         <EditText
@@ -63,8 +63,8 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:hint="@string/device_name_hint"
-          android:textColor="@color/onCardBackground"
-          android:textColorHint="@color/onCardBackgroundSecond"
+          android:textColor="?attr/colorOnSurface"
+          android:textColorHint="?attr/colorOnSurfaceSecond"
           android:textSize="@dimen/smallFont" />
 
         <LinearLayout
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/device_address"
-            android:textColor="@color/onCardBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/middleFont" />
 
           <Space
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:background="@drawable/background_round"
-            android:backgroundTint="@color/button"
+            android:backgroundTint="?attr/colorPrimary"
             android:paddingStart="12dp"
             android:paddingTop="5dp"
             android:paddingEnd="12dp"
@@ -101,7 +101,7 @@
               android:layout_width="20dp"
               android:layout_height="20dp"
               android:src="@drawable/scansion"
-              android:tint="@color/onButton" />
+              android:tint="?attr/colorOnPrimary" />
           </FrameLayout>
 
         </LinearLayout>
@@ -112,15 +112,15 @@
           android:layout_height="wrap_content"
           android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]-.:*"
           android:hint="@string/device_address_hint"
-          android:textColor="@color/onCardBackground"
-          android:textColorHint="@color/onCardBackgroundSecond"
+          android:textColor="?attr/colorOnSurface"
+          android:textColorHint="?attr/colorOnSurfaceSecond"
           android:textSize="@dimen/smallFont" />
 
         <TextView
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="@string/device_start_app"
-          android:textColor="@color/onCardBackground"
+          android:textColor="?attr/colorOnSurface"
           android:textSize="@dimen/middleFont" />
 
         <EditText
@@ -128,8 +128,8 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:hint="@string/device_start_app_hint"
-          android:textColor="@color/onCardBackground"
-          android:textColorHint="@color/onCardBackgroundSecond"
+          android:textColor="?attr/colorOnSurface"
+          android:textColorHint="?attr/colorOnSurfaceSecond"
           android:textSize="@dimen/smallFont" />
 
         <LinearLayout
@@ -148,7 +148,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/device_adb_port"
-              android:textColor="@color/onCardBackground"
+              android:textColor="?attr/colorOnSurface"
               android:textSize="@dimen/middleFont" />
 
             <EditText
@@ -157,8 +157,8 @@
               android:layout_height="wrap_content"
               android:digits="0123456789"
               android:text="5555"
-              android:textColor="@color/onCardBackground"
-              android:textColorHint="@color/onCardBackgroundSecond"
+              android:textColor="?attr/colorOnSurface"
+              android:textColorHint="?attr/colorOnSurfaceSecond"
               android:textSize="@dimen/smallFont" />
           </LinearLayout>
 
@@ -172,7 +172,7 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="@string/device_server_port"
-              android:textColor="@color/onCardBackground"
+              android:textColor="?attr/colorOnSurface"
               android:textSize="@dimen/middleFont" />
 
             <EditText
@@ -181,8 +181,8 @@
               android:layout_height="wrap_content"
               android:digits="0123456789"
               android:text="25166"
-              android:textColor="@color/onCardBackground"
-              android:textColorHint="@color/onCardBackgroundSecond"
+              android:textColor="?attr/colorOnSurface"
+              android:textColorHint="?attr/colorOnSurfaceSecond"
               android:textSize="@dimen/smallFont" />
           </LinearLayout>
         </LinearLayout>
@@ -204,7 +204,7 @@
           android:id="@+id/layout_on_connect"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/cardBackground"
+          android:background="?attr/colorSurfaceContainerLow"
           android:gravity="center_vertical"
           android:orientation="horizontal"
           android:paddingTop="6dp"
@@ -216,14 +216,14 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/device_on_connect"
-            android:textColor="@color/onCardBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/middleFont" />
 
           <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:src="@drawable/chevron_down"
-            android:tint="@color/onCardBackground" />
+            android:tint="?attr/colorOnSurface" />
         </LinearLayout>
 
         <LinearLayout
@@ -254,7 +254,7 @@
               android:digits="0123456789"
               android:gravity="center"
               android:padding="8dp"
-              android:textColor="@color/onCardBackground"
+              android:textColor="?attr/colorOnSurface"
               android:textSize="@dimen/smallFont" />
 
             <TextView
@@ -263,7 +263,7 @@
               android:layout_weight="1"
               android:gravity="center"
               android:text="X"
-              android:textColor="@color/onCardBackground"
+              android:textColor="?attr/colorOnSurface"
               android:textSize="@dimen/smallFont" />
 
             <EditText
@@ -275,7 +275,7 @@
               android:digits="0123456789"
               android:gravity="center"
               android:padding="8dp"
-              android:textColor="@color/onCardBackground"
+              android:textColor="?attr/colorOnSurface"
               android:textSize="@dimen/smallFont" />
           </LinearLayout>
         </LinearLayout>
@@ -296,7 +296,7 @@
           android:id="@+id/layout_on_running"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/cardBackground"
+          android:background="?attr/colorSurfaceContainerLow"
           android:gravity="center_vertical"
           android:orientation="horizontal"
           android:paddingTop="6dp"
@@ -308,14 +308,14 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/device_on_running"
-            android:textColor="@color/onCardBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/middleFont" />
 
           <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:src="@drawable/chevron_down"
-            android:tint="@color/onCardBackground" />
+            android:tint="?attr/colorOnSurface" />
         </LinearLayout>
 
         <LinearLayout
@@ -341,7 +341,7 @@
           android:id="@+id/layout_on_close"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/cardBackground"
+          android:background="?attr/colorSurfaceContainerLow"
           android:gravity="center_vertical"
           android:orientation="horizontal"
           android:paddingTop="6dp"
@@ -353,14 +353,14 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/device_on_close"
-            android:textColor="@color/onCardBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/middleFont" />
 
           <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:src="@drawable/chevron_down"
-            android:tint="@color/onCardBackground" />
+            android:tint="?attr/colorOnSurface" />
         </LinearLayout>
 
         <LinearLayout
@@ -386,7 +386,7 @@
           android:id="@+id/layout_option"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/cardBackground"
+          android:background="?attr/colorSurfaceContainerLow"
           android:gravity="center_vertical"
           android:orientation="horizontal"
           android:paddingTop="6dp"
@@ -398,14 +398,14 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:text="@string/device_option"
-            android:textColor="@color/onCardBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="@dimen/middleFont" />
 
           <ImageView
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:src="@drawable/chevron_down"
-            android:tint="@color/onCardBackground" />
+            android:tint="?attr/colorOnSurface" />
         </LinearLayout>
 
         <LinearLayout
@@ -424,10 +424,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginBottom="60dp"
         android:background="@drawable/background_cron"
-        android:backgroundTint="@color/button"
+        android:backgroundTint="?attr/colorPrimary"
         android:gravity="center"
         android:text="@string/device_button"
-        android:textColor="@color/onButton"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="@dimen/smallFont" />
 
     </LinearLayout>

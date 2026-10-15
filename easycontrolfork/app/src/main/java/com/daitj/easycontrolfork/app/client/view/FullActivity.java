@@ -10,6 +10,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.View;
 
@@ -148,7 +149,10 @@ public class FullActivity extends Activity implements SensorEventListener {
     activityFullBinding.navBar.setVisibility(isShow ? View.VISIBLE : View.GONE);
     activityFullBinding.buttonNavBar.setImageResource(isShow ? R.drawable.not_equal : R.drawable.equals);
     activityFullBinding.textureViewLayout.post(this::updateMaxSize);
-    activityFullBinding.buttonMore.setImageTintList(ColorStateList.valueOf(getResources().getColor(isShow ? R.color.onCardBackground : R.color.onBlackBacnground)));
+    TypedValue color = new TypedValue();
+    if (isShow) getTheme().resolveAttribute(com.google.android.material.R.attr.colorOnSurface, color, true);
+    else color.data = android.graphics.Color.WHITE;
+    activityFullBinding.buttonMore.setImageTintList(ColorStateList.valueOf(color.data));
   }
 
   private void changeBarView() {

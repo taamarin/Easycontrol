@@ -17,7 +17,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/background_round"
-    android:backgroundTint="@color/color1"
+    android:backgroundTint="?attr/colorPrimaryContainer"
     android:padding="6dp">
 
     <ImageView
@@ -25,7 +25,7 @@
       android:layout_width="30dp"
       android:layout_height="30dp"
       android:src="@drawable/wifi"
-      android:tint="@color/onColor1" />
+      android:tint="?attr/colorOnPrimaryContainer" />
   </FrameLayout>
 
   <LinearLayout
@@ -44,7 +44,7 @@
       android:includeFontPadding="false"
       android:maxLines="1"
       android:text="无线连接"
-      android:textColor="@color/onCardBackgroundSecond"
+      android:textColor="?attr/colorOnSurfaceVariant"
       android:textSize="@dimen/smallSmallFont"
       tools:ignore="HardcodedText" />
 
@@ -55,7 +55,7 @@
       android:includeFontPadding="false"
       android:maxLines="1"
       android:text="设备1"
-      android:textColor="@color/onCardBackground"
+      android:textColor="?attr/colorOnSurface"
       android:textSize="@dimen/middleFont"
       tools:ignore="HardcodedText" />
   </LinearLayout>

@@ -17,6 +17,8 @@
   <string name="set_other_reset_key">Reset ADB key</string>
   <string name="set_other_ip">IP addresses</string>
   <string name="set_other_locale">Change language(中文/English)</string>
+  <string name="set_home_layout_grid">Home layout: 3-column grid</string>
+  <string name="set_home_layout_list">Home layout: single-column list</string>
   <string name="set_about_website">Homepage</string>
   <string name="set_about_privacy">Privacy Policy</string>
   <string name="set_about_version">Version: </string>

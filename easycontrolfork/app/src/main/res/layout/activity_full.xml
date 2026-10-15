@@ -31,7 +31,7 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:layout_gravity="bottom"
-      android:background="@color/background"
+      android:background="?attr/colorSurface"
       android:gravity="center"
       android:orientation="horizontal"
       android:paddingStart="60dp"
@@ -45,7 +45,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/caret_left"
-        android:tint="@color/onBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_home"
@@ -55,7 +55,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/o"
-        android:tint="@color/onBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_switch"
@@ -65,7 +65,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/square"
-        android:tint="@color/onBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_auto_rotate"
@@ -75,7 +75,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/un_auto"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
     </LinearLayout>
   </LinearLayout>
@@ -89,7 +89,7 @@
     android:padding="2dp"
     android:paddingStart="20dp"
     android:src="@drawable/more"
-    android:tint="@color/onCardBackground" />
+    android:tint="?attr/colorOnSurface" />
 
   <LinearLayout
     android:id="@+id/bar_view"
@@ -116,7 +116,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/share"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_mini"
@@ -126,7 +126,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/minus"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_small"
@@ -136,7 +136,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/window_restore"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_close"
@@ -146,7 +146,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/x"
-        android:tint="@color/alert" />
+        android:tint="?attr/colorError" />
     </LinearLayout>
 
     <LinearLayout
@@ -162,7 +162,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/horizontal_rotate"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_nav_bar"
@@ -172,7 +172,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/not_equal"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_power"
@@ -182,7 +182,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/power"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
 
       <ImageView
         android:id="@+id/button_light"
@@ -192,7 +192,7 @@
         android:focusable="false"
         android:padding="4dp"
         android:src="@drawable/lightbulb_off"
-        android:tint="@color/onCardBackground" />
+        android:tint="?attr/colorOnSurface" />
     </LinearLayout>
 
   </LinearLayout>
