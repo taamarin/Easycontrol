@@ -64,7 +64,7 @@
           android:layout_height="wrap_content"
           android:hint="@string/device_name_hint"
           android:textColor="?attr/colorOnSurface"
-          android:textColorHint="?attr/colorOnSurfaceSecond"
+          android:textColorHint="?attr/colorOnSurfaceVariant"
           android:textSize="@dimen/smallFont" />
 
         <LinearLayout
@@ -113,7 +113,7 @@
           android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]-.:*"
           android:hint="@string/device_address_hint"
           android:textColor="?attr/colorOnSurface"
-          android:textColorHint="?attr/colorOnSurfaceSecond"
+          android:textColorHint="?attr/colorOnSurfaceVariant"
           android:textSize="@dimen/smallFont" />
 
         <TextView
@@ -129,7 +129,7 @@
           android:layout_height="wrap_content"
           android:hint="@string/device_start_app_hint"
           android:textColor="?attr/colorOnSurface"
-          android:textColorHint="?attr/colorOnSurfaceSecond"
+          android:textColorHint="?attr/colorOnSurfaceVariant"
           android:textSize="@dimen/smallFont" />
 
         <LinearLayout
@@ -158,7 +158,7 @@
               android:digits="0123456789"
               android:text="5555"
               android:textColor="?attr/colorOnSurface"
-              android:textColorHint="?attr/colorOnSurfaceSecond"
+              android:textColorHint="?attr/colorOnSurfaceVariant"
               android:textSize="@dimen/smallFont" />
           </LinearLayout>
 
@@ -182,7 +182,7 @@
               android:digits="0123456789"
               android:text="25166"
               android:textColor="?attr/colorOnSurface"
-              android:textColorHint="?attr/colorOnSurfaceSecond"
+              android:textColorHint="?attr/colorOnSurfaceVariant"
               android:textSize="@dimen/smallFont" />
           </LinearLayout>
         </LinearLayout>
