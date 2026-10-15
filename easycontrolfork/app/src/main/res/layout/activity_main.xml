@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="@color/background">
+  android:background="?attr/colorSurface">
 
   <LinearLayout
     android:layout_width="match_parent"
@@ -32,7 +32,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="@string/app_name_simple"
-          android:textColor="@color/onHomeHeader"
+          android:textColor="?attr/colorOnPrimaryContainer"
           android:textSize="22sp"
           android:textStyle="bold" />
 
@@ -41,7 +41,7 @@
           android:layout_height="wrap_content"
           android:maxLines="1"
           android:text="@string/main_poem"
-          android:textColor="@color/onHomeHeaderVariant"
+          android:textColor="?attr/colorOnPrimaryContainer"
           android:textSize="12sp" />
       </LinearLayout>
 
@@ -50,21 +50,22 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/background_round"
-        android:backgroundTint="@color/homeHeaderAccent"
+        android:backgroundTint="?attr/colorSecondaryContainer"
         android:padding="14dp"
         android:src="@drawable/bars"
-        android:tint="@color/onHomeHeader" />
+        android:tint="?attr/colorOnPrimaryContainer" />
 
     </LinearLayout>
 
-    <ListView
+    <GridView
       android:id="@+id/devices_list"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="2dp"
-      android:divider="#00000000"
-      android:dividerHeight="8dp"
+      android:horizontalSpacing="8dp"
+      android:numColumns="1"
       android:padding="12dp"
+      android:verticalSpacing="8dp"
       tools:listitem="@layout/item_devices_item" />
 
   </LinearLayout>
@@ -76,9 +77,9 @@
     android:layout_gravity="center_horizontal|bottom"
     android:layout_marginBottom="16dp"
     android:background="@drawable/background_round"
-    android:backgroundTint="@color/homeFab"
+    android:backgroundTint="?attr/colorPrimary"
     android:elevation="8dp"
     android:padding="16dp"
     android:src="@drawable/plus"
-    android:tint="@color/onHomeFab" />
+    android:tint="?attr/colorOnPrimary" />
 </FrameLayout>
