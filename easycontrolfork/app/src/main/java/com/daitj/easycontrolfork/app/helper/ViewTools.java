@@ -135,12 +135,13 @@ public class ViewTools {
     spinnerView.itemText.setText(text);
     spinnerView.itemDetail.setText(textDetail);
     spinnerView.itemSpinner.setAdapter(adapter);
-    spinnerView.itemSpinner.setSelection(adapter.getPosition(config));
+    int selectedPosition = adapter.getPosition(config);
+    spinnerView.itemSpinner.setSelection(selectedPosition < 0 ? 0 : selectedPosition);
     spinnerView.itemSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
       @Override
       public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if (function != null)
-          function.run(spinnerView.itemSpinner.getSelectedItem().toString());
+        Object selectedItem = parent.getItemAtPosition(position);
+        if (function != null && selectedItem != null) function.run(selectedItem.toString());
       }
 
       @Override
